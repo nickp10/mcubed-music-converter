@@ -71,6 +71,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mCubed.Converter.Core\mCubed.Converter.Core.csproj">
+      <Project>{BC2CAB4F-AF2C-4F81-AE29-8F434AA2F9E4}</Project>
+      <Name>mCubed.Converter.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

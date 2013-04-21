@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using mCubed.Converter.Core;
 
 namespace mCubed.Converter
 {
@@ -48,7 +49,7 @@ namespace mCubed.Converter
 
 		private void OnConvertClick(object sender, RoutedEventArgs e)
 		{
-
+			ConvertUtilities.ConvertDirectory(Directory);
 		}
 	}
 }
