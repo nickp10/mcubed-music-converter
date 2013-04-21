@@ -16,7 +16,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Content="Directory:" />
-                <TextBox Grid.Column="2" Text="{Binding Path=Directory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="DirectoryTextBox" />
+                <TextBox Grid.Column="2" Text="{Binding Path=Directory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </GroupBox>
         <Button Grid.Row="2" HorizontalAlignment="Center" Padding="5" Click="OnConvertClick" Content="Convert" />
