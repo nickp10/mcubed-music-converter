@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mCubed.Converter", "mCubed.Converter\mCubed.Converter.csproj", "{2856EB69-AD13-4154-9F50-B6DD8B5B57E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mCubed.Converter.Core", "mCubed.Converter.Core\mCubed.Converter.Core.csproj", "{BC2CAB4F-AF2C-4F81-AE29-8F434AA2F9E4}"
