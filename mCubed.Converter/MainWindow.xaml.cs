@@ -1,55 +1,45 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.IO;
 using System.Windows;
 using mCubed.Converter.Core;
 
 namespace mCubed.Converter
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window, INotifyPropertyChanged
+	public partial class MainWindow : Window
 	{
+		#region Properties
+
 		#region Directory
 
-		private string _directory = @"C:\Users\Nick\Downloads\";
+		public static readonly DependencyProperty DirectoryProperty =
+			DependencyProperty.Register("Directory", typeof(string), typeof(MainWindow), new PropertyMetadata(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads")));
+
 		public string Directory
 		{
-			get { return _directory; }
-			set
-			{
-				if (_directory != value)
-				{
-					_directory = value;
-					OnPropertyChanged("Directory");
-				}
-			}
+			get { return (string)GetValue(DirectoryProperty); }
+			set { SetValue(DirectoryProperty, value); }
 		}
 
 		#endregion
 
-		#region INotifyPropertyChanged Members
-
-		protected void OnPropertyChanged(string property)
-		{
-			var handler = PropertyChanged;
-			if (handler != null)
-			{
-				handler(this, new PropertyChangedEventArgs(property));
-			}
-		}
-		public event PropertyChangedEventHandler PropertyChanged;
-
 		#endregion
+
+		#region Constructors
 
 		public MainWindow()
 		{
-			DataContext = this;
 			InitializeComponent();
 		}
+
+		#endregion
+
+		#region Event Handlers
 
 		private void OnConvertClick(object sender, RoutedEventArgs e)
 		{
 			ConvertUtilities.ConvertDirectory(Directory);
 		}
+
+		#endregion
 	}
 }
