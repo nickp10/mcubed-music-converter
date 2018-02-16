@@ -36,6 +36,18 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>mCubed.Converter.Core.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3E503DB44624F31B60C8F079D39BA02851403229</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>mCubed.Converter.Core.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +64,9 @@
     <None Include="mCubed.Converter.Core.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="BeforePublish">
+    <Exec Command="&quot;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe&quot; sign /f &quot;$(ProjectDir)$(AssemblyName).pfx&quot; /p mCubed3Key /v &quot;$(ProjectDir)obj\x86\$(ConfigurationName)\$(TargetFileName)&quot;" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
